@@ -14,11 +14,12 @@ const Banner = () => {
 
       {/* Text Content */}
       <div className="relative z-10 max-w-xl text-center lg:text-left">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg animate-fadeLeft">
-          Drive Your Dreams.
+        <h1 className="relative inline-block text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg animate-fadeLeft font-orbitron">
+          <span className="relative z-10">Drive Your Dreams.</span>
         </h1>
-        <p className="text-white text-lg mt-4 animate-fadeRight">
-          Turn your dream ride into reality. Enjoy luxury, power, and style without breaking the bank. Drive smart. Live bold.
+
+        <p className="text-white text-2xl mt-4 animate-fadeRight font-hand">
+          Turn your dream ride into reality. Enjoy luxury, power, and style without breaking the bank.
         </p>
 
         <div className="mt-6 flex justify-center md:justify-start">
