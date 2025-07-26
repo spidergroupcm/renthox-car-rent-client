@@ -14,29 +14,28 @@ const Banner = () => {
 
       {/* Text Content */}
       <div className="relative z-10 max-w-xl text-center lg:text-left">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg neon-glow">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg animate-fadeLeft">
           Drive Your Dreams.
         </h1>
-        <p className="text-white text-lg mt-4">
-       Turn your dream ride into reality. Enjoy luxury, power, and style without breaking the bank. Drive smart. Live bold.
+        <p className="text-white text-lg mt-4 animate-fadeRight">
+          Turn your dream ride into reality. Enjoy luxury, power, and style without breaking the bank. Drive smart. Live bold.
         </p>
 
-      <div className="mt-6 flex justify-center md:justify-start">
-      <Link to="/availableCar">
-      <button className="px-6 py-3 bg-purple-600 hover:bg-yellow-400 hover:text-black transition-all duration-300 ease-in-out text-white font-semibold rounded-full flex items-center gap-2 shadow-lg">
-      View Available Cars <ArrowRight size={20} />
-      </button>
-      </Link>
+        <div className="mt-6 flex justify-center md:justify-start">
+          <Link to="/availableCar">
+            <button className="px-6 py-3 bg-purple-600 hover:bg-yellow-400 hover:text-black transition-all duration-300 ease-in-out text-white font-semibold rounded-full flex items-center gap-2 shadow-lg">
+              View Available Cars <ArrowRight size={20} />
+            </button>
+          </Link>
+        </div>
       </div>
 
-      </div>
-
-      {/* Car Image */}
+      {/* Car Image with Animation */}
       <div className="relative z-10 max-w-md md:max-w-lg lg:max-w-xl mb-10 lg:mb-0">
         <img
           src="https://i.ibb.co/rgWf0CG/pp1.png"
           alt="Luxury Car"
-          className="w-full drop-shadow-2xl animate-fadeInUp"
+          className="w-full drop-shadow-2xl animate-carMove hover:scale-105 transition-transform duration-500 ease-in-out"
         />
       </div>
     </div>
@@ -44,6 +43,4 @@ const Banner = () => {
 };
 
 export default Banner;
-
-
 
