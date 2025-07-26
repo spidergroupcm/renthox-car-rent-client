@@ -23,7 +23,7 @@ A modern, full-featured **Car Rental Web Application** built using the **MERN st
 - React.js
 - React Router
 - Tailwind CSS
-- DaisyUI
+
 
 ### Backend:
 - Node.js
