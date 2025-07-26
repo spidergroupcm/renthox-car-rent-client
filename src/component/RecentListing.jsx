@@ -1,12 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {
-  Car,
-  CalendarClock,
-  MapPin,
-  DollarSign,
-  Eye,
-} from "lucide-react";
+import { Car, DollarSign, CheckCircle, XCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const RecentListing = () => {
   const [cars, setCars] = useState([]);
@@ -25,28 +20,19 @@ const RecentListing = () => {
     fetchCars();
   }, []);
 
-  // Split cars array for different screen sizes
-  const smCars = cars.slice(0, 1);
-  const mdCars = cars.slice(0, 4);
+  // Only take 4 cars max
+  const displayedCars = cars.slice(0, 4);
 
   return (
-    <div className="w-full py-10 bg-gradient-to-br from-white via-purple-50 to-purple-100">
-      <h2 className="text-4xl font-bold text-center text-purple-700 mb-5 flex items-center justify-center gap-3">
+    <div className="w-full py-14 bg-gradient-to-br from-white via-purple-50 to-purple-100">
+      <h2 className="text-4xl font-extrabold text-center text-purple-700 mb-10 flex items-center justify-center gap-3 tracking-wide">
         <Car className="text-yellow-500" />
         Latest Cars
       </h2>
 
       <div className="px-6 md:px-12">
-        {/* Small screens: show 1 card */}
-        <div className="grid grid-cols-1 gap-8 md:hidden">
-          {smCars.map((car) => (
-            <Card key={car._id} car={car} />
-          ))}
-        </div>
-
-        {/* Medium and up: show 4 cards */}
-        <div className="hidden md:grid md:grid-cols-4 gap-8">
-          {mdCars.map((car) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {displayedCars.map((car) => (
             <Card key={car._id} car={car} />
           ))}
         </div>
@@ -55,53 +41,39 @@ const RecentListing = () => {
   );
 };
 
-// Extracted card component
 const Card = ({ car }) => (
-  <div className="bg-white/70 backdrop-blur-md border border-purple-600 rounded-2xl shadow-lg p-2 transition-transform hover:scale-[1.01] hover:shadow-xl duration-200">
-    <img
-      src={car.images[0]}
-      alt={car.carModel}
-      className="w-full h-56 object-cover rounded-xl border border-purple-100"
-    />
-
-    <div className="mt-5 text-gray-800 space-y-3">
-      <h3 className="text-2xl font-bold text-purple-700">{car.carModel}</h3>
-
-      <p className="flex items-center gap-2 text-sm">
-        <DollarSign size={16} className="text-purple-600" />
-        <span className="font-medium">Daily Price:</span> ${car.dailyRentalPrice}/Day
-      </p>
-
-      <p className="flex items-center gap-2 text-sm">
-        <CalendarClock size={16} className="text-purple-600" />
-        <span className="font-medium">Posted:</span>{" "}
-        {new Date(car.dateAdded).toLocaleDateString()}
-      </p>
-
-      <p className="flex items-center gap-2 text-sm">
-        <MapPin size={16} className="text-purple-600" />
-        <span className="font-medium">Location:</span> {car.location}
-      </p>
-
-      <p className="flex items-center gap-2 text-sm">
-        <Eye size={16} className="text-purple-600" />
-        <span className="font-medium">Booking:</span> {car.bookingCount}
-      </p>
-
-      <div className="text-sm">
-        <span className="font-medium">Availability:</span>{" "}
-        <span
-          className={`font-bold ${
-            car.bookingCount > 0 ? "text-red-500" : "text-green-600"
-          }`}
-        >
-          {car.bookingCount > 0 ? "Unavailable" : "Available"}
-        </span>
+  <div className="bg-white/70 backdrop-blur-lg border border-purple-300 rounded-3xl shadow-xl p-4 transition-all duration-300 hover:scale-[1.02] hover:border-purple-500 hover:shadow-purple-200 group flex flex-col justify-between">
+    <div>
+      <div className="relative">
+        <img
+          src={car.images[0]}
+          alt={car.carModel}
+          className="w-full h-48 object-cover rounded-2xl border border-purple-200 shadow-sm"
+        />
       </div>
+
+      <div className="mt-5 space-y-4">
+        <h3 className="text-xl font-bold text-purple-700 group-hover:text-purple-900 transition-all">
+          {car.carModel}
+        </h3>
+
+        <div className="flex items-center gap-2 text-gray-700 text-sm">
+          <DollarSign size={18} className="text-purple-600" />
+          <span className="font-medium">Daily Price:</span>
+          <span className="font-bold text-black">${car.dailyRentalPrice}/Day</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Redirect Button */}
+    <div className="mt-6">
+      <Link to="/availableCar">
+        <button className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-purple-600 text-white font-semibold hover:bg-yellow-400 hover:text-black transition-all duration-300 border border-white shadow-md">
+          View More Cars <ArrowRight size={18} />
+        </button>
+      </Link>
     </div>
   </div>
 );
 
 export default RecentListing;
-
-

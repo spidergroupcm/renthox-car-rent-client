@@ -18,13 +18,13 @@ const Banner = () => {
           <span className="relative z-10">Drive Your Dreams.</span>
         </h1>
 
-        <p className="text-white text-2xl mt-4 animate-fadeRight font-hand">
+        <p className="text-white text-xl md:text-2xl mt-4 animate-fadeRight font-hand">
           Turn your dream ride into reality. Enjoy luxury, power, and style without breaking the bank.
         </p>
 
         <div className="mt-6 flex justify-center md:justify-start">
           <Link to="/availableCar">
-            <button className="px-6 py-3 bg-purple-600 hover:bg-yellow-400 hover:text-black transition-all duration-300 ease-in-out text-white font-semibold rounded-full flex items-center gap-2 shadow-lg">
+            <button className="px-6 py-3 bg-purple-600 hover:bg-yellow-400 hover:text-black transition-all duration-300 ease-in-out text-white font-semibold  rounded-full flex items-center gap-2 shadow-lg border border-2 border-white">
               View Available Cars <ArrowRight size={20} />
             </button>
           </Link>

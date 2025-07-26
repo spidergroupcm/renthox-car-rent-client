@@ -6,10 +6,10 @@ const MobileAppComingSoon = () => {
       <div className="relative max-w-4xl w-full flex flex-col md:flex-row items-center gap-12 z-10">
         {/* Left Content */}
         <div className="text-center md:text-left space-y-6 max-w-md">
-          <h1 className="text-5xl text-purple-600 tracking-wide animate-gradient-text bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 bg-clip-text text-transparent">
+          <h1 className="text-5xl text-purple-600 font-orbitron tracking-wide animate-gradient-text bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 bg-clip-text text-transparent mb-5">
             Our Mobile App Coming Soon
           </h1>
-          <p className="text-lg text-purple-700/90 leading-relaxed">
+          <p className="text-lg text-purple-700/90 leading-relaxed mt-5">
             Get ready to experience the future of technology at your fingertips.
             Our app is launching soon, available on both <span className="font-semibold">iOS</span> and <span className="font-semibold">Android</span> devices.
           </p>
