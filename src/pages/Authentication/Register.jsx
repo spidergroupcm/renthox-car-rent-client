@@ -78,7 +78,7 @@ const Register = () => {
             <div className="bg-purple-600 p-2 rounded-full text-white shadow-md">
               <Car size={24} />
             </div>
-            <span className="text-2xl font-bold text-purple-600">Go Rent</span>
+            <span className="text-2xl font-bold text-purple-600">Renthox</span>
           </div>
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Create Account</h2>
           <p className="text-gray-600">Join us and start your car rental journey</p>
